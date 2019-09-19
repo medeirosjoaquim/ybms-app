@@ -1,4 +1,4 @@
-import { DO_RECEIVE_TEST} from "../actions";
+import { DO_RECEIVE_TEST} from "../actions/types";
 
 export default (state = {}, { type, data }) => {
   switch (type) {
