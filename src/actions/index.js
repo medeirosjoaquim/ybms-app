@@ -5,12 +5,11 @@ export const requestTestData = () => ({type: ACTION.DO_TEST_REQUEST});
 
 export const receiveTestData = data => ({type: ACTION.DO_RECEIVE_TEST, data});
 
-/* session requests */
+/* movies requests */
 
-export const generateRequestToken = () => ({type: ACTION.GENERATE_REQUEST_TOKEN});
+export const requestMoviesList = () => ({type: ACTION.REQUEST_MOVIES_LIST});
 
-
-
+export const receiveMoviesList = data => ({type: ACTION.RECEIVE_MOVIES_LIST, data});
 
 /* export const requestArtistInfo = () => ({ type: REQUEST_ARTISTINFO });
 export const receiveArtistInfo =  data => ({ type: RECEIVE_ARTISTINFO, data });

@@ -5,11 +5,6 @@
 export const DO_TEST_REQUEST = "DO_TEST_REQUEST";
 export const DO_RECEIVE_TEST = "DO_RECEIVE_TEST";
 
-/** action types for session:
- *
- */
-export const GENERATE_REQUEST_TOKEN = "GENERATE_REQUEST_TOKEN";
-
 /** action types for movies:
  *
  */

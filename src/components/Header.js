@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import Logo from '../assets/logo_white.png';
 import { NavLink } from 'react-router-dom'
-import { generateRequestToken } from '../actions';
-
+import { requestMoviesList } from '../actions';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
 
 class Header extends Component {
   componentDidMount() {
-    this.props.generateRequestToken();
+    this.props.requestMoviesList();
     console.log('header mounted');
   }
   render() {
@@ -46,6 +45,6 @@ class Header extends Component {
 const mapStateToProps = state => ({ testeDataRequest: state.testeDataRequest });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ generateRequestToken }, dispatch);
+  bindActionCreators({ requestMoviesList }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

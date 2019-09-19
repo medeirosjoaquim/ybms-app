@@ -1,5 +1,5 @@
 import { call, all,  put, takeEvery } from "redux-saga/effects";
-import { DO_TEST_REQUEST, GENERATE_REQUEST_TOKEN } from "../actions/types";
+import { DO_TEST_REQUEST, REQUEST_MOVIES_LIST } from "../actions/types";
 import {receiveTestData} from "../actions";
 import axios from 'axios';
 
@@ -14,7 +14,7 @@ const testRequest = async () => {
 };
 // theMovieDbAuth
 // Generate a new request token
-const generateRequestToken = async () => {
+const getMoviesList = async () => {
   try {
     const response = await axios.get('https://api.themoviedb.org/4/list/121792?page=1', {
       'headers': {
@@ -54,11 +54,17 @@ function* getTestData(action) {
     yield put ( receiveTestData (teste) )
 }
 
+function* receiveMoviesList(action) {
+// do api call
+const teste = yield call(testRequest);
+console.log('call', teste);
+  yield put ( receiveTestData (teste) )
+}
+
+
 export default function* rootSaga() {
   yield all([
     takeEvery(DO_TEST_REQUEST, getTestData),
-    takeEvery(GENERATE_REQUEST_TOKEN, generateRequestToken),
-    //takeEvery(REQUEST_DISCOGRAPHY, getDiscography),
-    //takeEvery(REQUEST_TRACKLIST, getTrackList)
+    takeEvery(REQUEST_MOVIES_LIST, <receiveMoviesList></receiveMoviesList>),
   ]);
 }
