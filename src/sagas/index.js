@@ -1,43 +1,34 @@
 import { call, all,  put, takeEvery } from "redux-saga/effects";
-import {
-  REQUEST_ARTISTINFO, receiveArtistInfo, REQUEST_DISCOGRAPHY, receiveDiscography,
-REQUEST_TRACKLIST, receiveTracklist} from "../actions";
-import {fetchArtistInfo, fetchDiscography, fetchSongsByAlbum} from './api'
-// worker Saga: will be fired on USER_FETCH_REQUESTED actions
+import {DO_TEST_REQUEST, receiveTestData} from "../actions";
 
-function* getArtistInfo(action) {
+
+const testRequest = async () => {
   try {
-    // do api call
-    const data = yield call(fetchArtistInfo);
-    yield put(receiveArtistInfo(data));
+    const response = await fetch("https://jsonplaceholder.typicode.com/users", {
+      headers: {
+        "Content-Type": "application/json",
+    },
+    }
+    );
+    const data = await response.json();
+    return data;
   } catch (e) {
     console.log(e);
   }
-}
-function* getDiscography(action) {
-  try {
+};
+
+
+function* getTestData(action) {
     // do api call
-    const data = yield call(fetchDiscography);
-    yield put(receiveDiscography(data));
-  } catch (e) {
-    console.log(e);
-  }
+  const data = yield call(testRequest);
+  console.log('call', data);
+    yield put ( receiveTestData (data) )
 }
 
-function* getTrackList(action) {
-  try {
-    // do api call
-    const data = yield call(fetchSongsByAlbum);
-    yield put(receiveTracklist(data));
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-export default function* mySaga() {
+export default function* rootSaga() {
   yield all([
-    takeEvery(REQUEST_ARTISTINFO, getArtistInfo),
-    takeEvery(REQUEST_DISCOGRAPHY, getDiscography),
-    takeEvery(REQUEST_TRACKLIST, getTrackList)
+    takeEvery(DO_TEST_REQUEST, getTestData),
+    //takeEvery(REQUEST_DISCOGRAPHY, getDiscography),
+    //takeEvery(REQUEST_TRACKLIST, getTrackList)
   ]);
 }

@@ -1,8 +1,8 @@
-import { RECEIVE_TRACKLIST} from "../actions";
+import { DO_TEST_REQUEST } from "../actions";
 
 export default (state = {}, { type, data }) => {
   switch (type) {
-    case RECEIVE_TRACKLIST:
+    case DO_TEST_REQUEST:
       return data;
 
     default:

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Logo from '../assets/logo_white.png';
+import { NavLink } from 'react-router-dom'
 
 export default class Header extends Component {
 
@@ -16,16 +17,16 @@ export default class Header extends Component {
         <div className="header-jumbotron--links">
         <ul className="text-light">
             <li className="breadcrumb-item">
-              <a href="#">Home</a>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li className="breadcrumb-item">
-              <a href="#">Favorites</a>
+              <NavLink to="/favorites">Favorites</NavLink>
             </li>
             <li className="breadcrumb-item">
               <a href="#">Movies/Series</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="#">About</a>
+              <NavLink to="/about">About</NavLink>
             </li>
         </ul>
         </div>
