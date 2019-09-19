@@ -1,0 +1,90 @@
+$break-small: 880px;
+.Artist-Info-component{
+padding-bottom: 5px;
+margin-bottom: 80px;
+}
+.artist-bio{
+max-width: 75%;
+@media screen and (max-width: $break-small) {
+  max-width: 90%;
+}
+}
+
+p, h3 {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 200px;
+  grid-template-areas: "master details";
+  @media screen and (max-width: $break-small) {
+    display: block;
+  }
+}
+
+.details {
+  max-width:100px;
+  grid-area: details;
+}
+.master {
+padding-bottom: 10px;
+}
+
+ .tags-container{
+  min-width:300px;
+  min-height:50px;
+}
+#tag{
+
+}
+img.avatar{
+height:300px;
+}
+
+#tagmap{
+  min-width:250px;
+  width:250px;
+}
+.similar-artists{
+  display: grid;
+  min-width: 300px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+}
+
+.similar-artist-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: "similar-artist-image" "similar-artist-name";
+}
+
+#similar-artist-item > img{
+  height:50px;
+}
+
+.similar-artist-image {
+  grid-area: similar-artist-image;
+ }
+ .similar-artist-image > img {
+  height:100px;
+ }
+
+.similar-artist-name {
+min-width:120px;
+  grid-area: similar-artist-name;
+ }
+
+#listen-badge{
+  display:inline-block;
+  overflow:hidden;
+  height:45px;
+  margin-top: 15px;
+  margin-bottom:15px;
+}

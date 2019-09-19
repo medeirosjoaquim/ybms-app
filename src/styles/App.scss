@@ -1,0 +1,21 @@
+@import './media';
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import './Header.scss';
+@import './ArtistInfo.scss';
+@import './Track.scss';
+@import './Main.scss';
+
+.App {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+.App-content {
+  padding: 2rem;
+}
+.App-link {
+  color: #61dafb;
+}
+
+
+@include tablet {
+}
