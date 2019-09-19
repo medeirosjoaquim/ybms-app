@@ -23,7 +23,7 @@ class Favorites extends Component  {
   }
 }
 
-const mapStateToProps = state => ({ data: state.data });
+const mapStateToProps = state => ({ test_data: state.data });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ requestTestData }, dispatch);

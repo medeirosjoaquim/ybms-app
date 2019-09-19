@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
-import  data  from "./data";
+import  testeDatarequest  from "./data";
 //import  discodata  from "./discodata";
 //import  datatracklist  from "./datatracklist";
 
 const rootReducer = combineReducers({
-  data,
+  testeDatarequest,
   //discodata,
   //datatracklist
 });
