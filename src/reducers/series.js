@@ -4,7 +4,7 @@ export default (state = {}, { type, payload }) => {
   switch (type) {
     case RECEIVE_SERIES_LIST:
       console.log('reducer SERIES LIST',  payload, type);
-      return payload;
+      return payload.data;
     default:
       return state;
   }

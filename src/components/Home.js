@@ -1,30 +1,17 @@
-import React, {Component} from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-//import { requestArtistInfo } from '../actions';
-import { requestTestData } from '../actions';
+import React from 'react'
+import { useSelector } from 'react-redux'
 
 
-class About extends Component  {
+const Home = () => {
 
-  results = [];
-  componentDidMount() {
-  //  this.props.requestArtistInfo();
-  }
-
-  render() {
-    return (
-      <div className="Artist-Info-component">
-        about works
-      </div>
-    )
-
-  }
+  const movies = useSelector(state => state.movies)
+  console.log(movies.results !== undefined ? movies.results.length : 'no results');
+  return (
+    <div>
+    home component works! {movies.description}
+    </div>
+  )
 }
 
-const mapStateToProps = state => ({ data: state.data });
+export default Home
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ requestTestData }, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(About);

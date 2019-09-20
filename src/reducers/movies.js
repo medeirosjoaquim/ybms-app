@@ -4,7 +4,7 @@ export default (state = {}, { type, payload }) => {
   switch (type) {
     case RECEIVE_MOVIES_LIST:
       console.log('reducer movie list',  payload, type);
-      return payload;
+      return payload.data;
     default:
       return state;
   }

@@ -36,7 +36,6 @@
   ],
   "devDependencies": {
     "flow-bin": "^0.96.0",
-    "react-redux": "^6.0.1",
     "redux": "^4.0.1",
     "redux-act": "^1.7.4",
     "redux-devtools-extension": "^2.13.8"
