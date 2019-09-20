@@ -1,11 +1,14 @@
 @import './media';
 
 .home {
+  &-banner--container {
+    margin-bottom: 1rem;
+  }
   &-banner--title {
     display:flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
+    justify-content: start;
+    margin-bottom: 0.5rem;
   }
 
 }
