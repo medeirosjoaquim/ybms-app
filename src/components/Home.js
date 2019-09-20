@@ -3,8 +3,9 @@ import Banner from './banner'
 import {useSelector} from 'react-redux'
 import {baseurl} from '../config/base-url'
 
-const Home = () => {
 
+
+const Home = () => {
 
   let poster_path = ''
   let poster_description = ''
@@ -16,9 +17,9 @@ const Home = () => {
   return (
     (movies !== undefined & movies.results !== undefined) ?
     <div>
-      <Banner title={!poster_description === '' || poster_description} imgSrc={!poster_path === '' || poster_path} imgAlt={`Banner for the movie ${!poster_description === '' || poster_description}`} />
+      <Banner title={poster_description} imgSrc={poster_path} imgAlt={`Banner for the movie ${poster_description}`} />
       </div> :
-      <div><h3>Loading...</h3></div>
+      <div><h2>Loading...</h2></div>
   )
 }
 
