@@ -6,11 +6,13 @@ import * as middleware from './api'
 
 export function* getMovies() {
   const movies = yield call(middleware.getMoviesList);
+  console.log(`${movies.data.description}:`, movies.data)
   yield put(action.receiveMoviesList(movies));
 }
 
 export function* getSeries() {
   const series = yield call(middleware.getSeriesList)
+  console.log(`${series.data.description}:`, series.data)
   yield put(action.receiveSeriesList(series));
 }
 

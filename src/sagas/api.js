@@ -28,7 +28,7 @@ export const testRequest = async () => {
 export const getMoviesList = async () => {
   try {
     const response = await axios.get( moviesListUrl, requestHeaders);
-    console.log('Get movies list', response)
+   // console.log('Get movies list', response)
     return response
   } catch (e) {
     console.log(e);
@@ -38,7 +38,7 @@ export const getMoviesList = async () => {
 export const getSeriesList = async () => {
   try {
     const response = await axios.get( seriesListUrl, requestHeaders);
-    console.log('Get series list', response)
+    //console.log('Get series list', response)
     return response
   } catch (e) {
     console.log(e);
