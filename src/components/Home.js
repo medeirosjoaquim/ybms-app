@@ -1,5 +1,6 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import Banner from './banner'
+import {useSelector} from 'react-redux'
 import {baseurl} from '../config/base-url'
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
   return (
     <div>
       <img src={!poster_path === '' || poster_path} alt="" />
+      <Banner title="title_works" imgSrc="imgSrc works"/>
     </div>
   )
 }
