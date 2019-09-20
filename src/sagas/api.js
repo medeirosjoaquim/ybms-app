@@ -9,19 +9,10 @@ const requestHeaders = {
   }
 }
 
-
 const moviesListUrl = 'https://api.themoviedb.org/4/list/121792?page=1'
 
 const seriesListUrl = 'https://api.themoviedb.org/4/list/121793?page=1'
 
-export const testRequest = async () => {
-  try {
-    const response = await axios.get("https://jsonplaceholder.typicode.com/users", {'headers': {'Authorization': 'Teste'}});
-    return response.data;
-  } catch (e) {
-    console.log(e);
-  }
-};
 // theMovieDbAuth
 // Generate a new request token
 export const getMoviesList = async () => {

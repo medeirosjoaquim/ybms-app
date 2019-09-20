@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 class Header extends Component {
   componentDidMount() {
     this.props.requestMoviesAndSeriesList();
-    console.log('header mounted');
   }
   render() {
     return (

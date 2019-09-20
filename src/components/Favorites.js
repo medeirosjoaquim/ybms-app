@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { requestTestData } from '../actions';
+//import { bindActionCreators } from 'redux';
+//import { connect } from 'react-redux';
+//import { requestTestData } from '../actions';
 //import { requestArtistInfo } from '../actions';
 
 
-class Favorites extends Component  {
+export default class Favorites extends Component  {
 
   results = [];
   componentDidMount() {
-  this.props.requestTestData();
+  //this.props.requestTestData();
   }
 
   render() {
@@ -23,9 +23,9 @@ class Favorites extends Component  {
   }
 }
 
-const mapStateToProps = state => ({ testeDataRequest: state.testeDataRequest });
+/* const mapStateToProps = state => ({ testeDataRequest: state.testeDataRequest });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ requestTestData }, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
+ */
+/* export default connect(mapStateToProps, mapDispatchToProps)(Favorites); */
