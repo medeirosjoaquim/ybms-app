@@ -1,9 +1,11 @@
-  @import './media';
+@import './media';
+@import './colors';
 
-.header-jumbotron {
+.header {
 
   &--brand {
-    background-color: #176498;
+    background-color: $philips-blue;
+    color: $philips-opaque;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,9 +21,13 @@
     max-width: 19rem;
   }
   &--links {
-    margin: 1rem 0rem;
+    margin: 0.5rem 0rem;
     display: flex;
     justify-content: center;
+    a {
+      color: $philips-blue;
+    }
+
     ul {
       padding: 0;
     }
@@ -49,7 +55,7 @@
 }
 
 @include tablet {
-  .header-jumbotron {
+  .header {
     &--brand {
       flex-direction: row;
     img {

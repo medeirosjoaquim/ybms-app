@@ -12,16 +12,16 @@ class Header extends Component {
   }
   render() {
     return (
-      <div className="header-jumbotron">
-        <div className="header-jumbotron--brand">
+      <div className="header">
+        <div className="header--brand">
           <img src={Logo} alt="Logo for
           the ybms app"/>
-          <h1 className="header-jumbotron--title text-center text-light">
+          <h1 className="header--title text-center font-weight-bold">
             <strong>Your Beloved Music and Series</strong>
             </h1>
         </div>
-        <div className="header-jumbotron--links">
-        <ul className="text-light">
+        <div className="header--links">
+        <ul className="text-light font-weight-bold">
             <li className="breadcrumb-item">
               <NavLink to="/">Home</NavLink>
             </li>
