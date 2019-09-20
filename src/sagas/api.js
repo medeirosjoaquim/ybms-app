@@ -13,25 +13,28 @@ const moviesListUrl = 'https://api.themoviedb.org/4/list/121792?page=1'
 
 const seriesListUrl = 'https://api.themoviedb.org/4/list/121793?page=1'
 
-// theMovieDbAuth
-// Generate a new request token
+/**
+ * themoviedb api - get movies list
+ */
+
 export const getMoviesList = async () => {
   try {
     const response = await axios.get( moviesListUrl, requestHeaders);
-   // console.log('Get movies list', response)
     return response
   } catch (e) {
     console.log(e);
   }
 };
+
+/**
+ * themoviedb api - get series list
+ */
 
 export const getSeriesList = async () => {
   try {
     const response = await axios.get( seriesListUrl, requestHeaders);
-    //console.log('Get series list', response)
     return response
   } catch (e) {
     console.log(e);
   }
 };
-
