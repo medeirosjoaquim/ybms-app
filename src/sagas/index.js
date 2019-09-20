@@ -1,30 +1,29 @@
-import { call, all,  put, takeEvery } from "redux-saga/effects";
+import { call, all,  put, takeEvery, fork } from "redux-saga/effects";
 import { REQUEST_MOVIES_AND_SERIES_LIST, DO_TEST_REQUEST} from "../actions/types";
-import * as actions from "../actions";
+import * as action from "../actions";
 
 import * as middleware from './api'
 
-export function* getMoviesAndSeries() {
-  const movies = yield call(middleware.getMoviesList)
+export function* getMovies() {
+  const movies = yield call(middleware.getMoviesList);
+  yield put(action.receiveMoviesList(movies));
+}
+
+export function* getSeries() {
   const series = yield call(middleware.getSeriesList)
-  yield put(actions.receiveMovies(movies));
-  yield put(actions.receiveSeries(series));
+  yield put(action.receiveSeriesList(series));
+}
+
+export function* getMoviesAndSeries() {
+  yield all([fork(getMovies), fork(getSeries)]);
 }
 
 function* getTestData(action) {
     // do api call
   const teste = yield call(middleware.testRequest);
   console.log('call', teste);
-    yield put ( receiveTestData (teste) )
+    yield put ( action.receiveTestData (teste) )
 }
-
-function* receiveMoviesList(action) {
-// do api call
-const teste = yield call(middleware.testRequest);
-console.log('call', teste);
-  yield put ( receiveTestData (teste) )
-}
-
 
 export default function* rootSaga() {
   yield all([

@@ -1,10 +1,10 @@
-import { DO_TEST_REQUEST } from "../actions";
+import { DO_RECEIVE_TEST} from "../actions/types";
 
 export default (state = {}, { type, data }) => {
   switch (type) {
-    case DO_TEST_REQUEST:
+    case DO_RECEIVE_TEST:
+      console.log('reducer',  data, type);
       return data;
-
     default:
       return state;
   }
