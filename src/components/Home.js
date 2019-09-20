@@ -7,15 +7,18 @@ const Home = () => {
 
 
   let poster_path = ''
-  const movies = useSelector(state => state.movies);
+  let poster_description = ''
+  const {movies} = useSelector(state => state);
   if (movies !== undefined & movies.results !== undefined) {
     poster_path = baseurl.banner + movies.results[0].poster_path;
+    poster_description = movies.results[0].title;
   }
   return (
+    (movies !== undefined & movies.results !== undefined) ?
     <div>
-      <img src={!poster_path === '' || poster_path} alt="" />
-      <Banner title="title_works" imgSrc="imgSrc works"/>
-    </div>
+      <Banner title={!poster_description === '' || poster_description} imgSrc={!poster_path === '' || poster_path} imgAlt={`Banner for the movie ${!poster_description === '' || poster_description}`} />
+      </div> :
+      <div><h3>Loading...</h3></div>
   )
 }
 

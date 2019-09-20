@@ -17,7 +17,7 @@ class Header extends Component {
           <img src={Logo} alt="Logo for
           the ybms app"/>
           <h1 className="header-jumbotron--title text-center text-light">
-            <strong>Your Beloves Music and Series</strong>
+            <strong>Your Beloved Music and Series</strong>
             </h1>
         </div>
         <div className="header-jumbotron--links">
