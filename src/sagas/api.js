@@ -17,7 +17,6 @@ const seriesListUrl = 'https://api.themoviedb.org/4/list/121793?page=1'
 export const testRequest = async () => {
   try {
     const response = await axios.get("https://jsonplaceholder.typicode.com/users", {'headers': {'Authorization': 'Teste'}});
-    console.log(response);
     return response.data;
   } catch (e) {
     console.log(e);
