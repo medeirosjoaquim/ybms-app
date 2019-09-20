@@ -1,9 +1,11 @@
 @import './media';
 
 .home {
-  &-banner--container {
-
-
+  &-banner--title {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 
 }

@@ -19,10 +19,13 @@ const Home = () => {
   return (
     (movies !== undefined & movies.results !== undefined) ?
     <div className="home-banner--container border-animation">
-      <Banner title={`${poster_description} - ${release_date}` } imgSrc={poster_path} imgAlt={`Banner for the movie ${poster_description}`} />
+      <div className="home-banner--title Title-1">TOP #1 Movie</div>
+        <Banner title={`${poster_description} - ${release_date}`} imgSrc={poster_path} imgAlt={`Banner for the movie ${poster_description}`} />
       </div> :
-      <div><h2 className="display-4 text-primary font-weight-bold
-      ">Loading...</h2></div>
+      <div>
+        <h2 className="display-4 text-primary font-weight-bold
+      ">Loading...</h2>
+      </div>
   )
 }
 

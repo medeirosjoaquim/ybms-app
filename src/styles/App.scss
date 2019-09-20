@@ -19,6 +19,12 @@
   color: #61dafb;
 }
 
+.Title-1 {
+  font-size: 1.75rem;
+}
 
 @include tablet {
+  .Title-1 {
+    font-size: 2rem;
+  }
 }
