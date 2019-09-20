@@ -4,7 +4,7 @@ import './styles.scss'
 function Banner(props) {
   return (
     <div className='banner'>
-      <div className='banner--title'>
+      <div className='banner--img'>
         <img src={props.imgSrc} alt={props.imgAlt}></img>
       </div>
       <div className='banner--title'>{props.title}</div>
