@@ -1,8 +1,10 @@
 @import './media';
+@import './colors';
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import './Header.scss';
 @import './Main.scss';
 @import './Home.scss';
+@import './About.scss';
 @import './Footer.scss';
 
 .App {
@@ -16,16 +18,18 @@
   justify-content: center;
 }
 .App-link {
-  color: #61dafb;
+  color: $philips-blue-light;
 }
 
 .Title-1 {
   font-size: 1.75rem;
+  font-weight: bold;
 }
 
 @include tablet {
   .Title-1 {
     font-size: 2rem;
+
   }
   .App-content {
     margin: 3rem 2rem 0 2rem;

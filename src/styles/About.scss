@@ -1,0 +1,10 @@
+@import './media';
+@import './colors';
+
+.about {
+
+  &--title{
+    font-weight: bold;
+    color:red;
+  }
+}

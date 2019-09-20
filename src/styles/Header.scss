@@ -22,7 +22,7 @@
   }
   &--links {
     height: 1.25rem;
-    margin: 0.5rem 0rem;
+    margin: 1rem 0rem;
     display: flex;
     justify-content: center;
     a {
@@ -44,10 +44,6 @@
       padding-left:1.25rem;
     }
     li a {
-
-     // display: flex;
-     // text-align: center;
-     // margin: 0 0.25rem;
       text-decoration: none;
     }
 
@@ -68,7 +64,7 @@
       padding-right: 2rem;
     }
     .breadcrumb-item+.breadcrumb-item {
-      padding-left:2rem;
+      padding-left: 2rem;
     }
   }
 

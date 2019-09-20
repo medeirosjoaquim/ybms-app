@@ -1,30 +1,18 @@
-import React, {Component} from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-//import { requestArtistInfo } from '../actions';
-import { requestTestData } from '../actions';
+import React from 'react';
 
+const About = () => {
+  return (
+    <div className="about">
+      <div className="about--title"><h4>About us</h4></div>
+      <div className="about--content">
+        <p> There's something about us I want to say. Cause there's something between us anyway
+        </p>
+        <p>
 
-class About extends Component  {
-
-  results = [];
-  componentDidMount() {
-  //  this.props.requestArtistInfo();
-  }
-
-  render() {
-    return (
-      <div className="Artist-Info-component">
-        about works
+        </p>
       </div>
-    )
-
-  }
+    </div>
+  );
 }
 
-const mapStateToProps = state => ({ data: state.data });
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ requestTestData }, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(About);
+export default About;

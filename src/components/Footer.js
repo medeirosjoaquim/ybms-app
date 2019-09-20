@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 const Footer = () => (
   <section>
     <footer className="footer">
-        Made by Joaquim Medeiros &copy; { year }
+        By Joaquim For Philips with ❤️  { year }
     </footer>
   </section>
 );
