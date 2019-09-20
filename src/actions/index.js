@@ -5,18 +5,15 @@ export const requestTestData = () => ({type: ACTION.DO_TEST_REQUEST});
 
 export const receiveTestData = data => ({type: ACTION.DO_RECEIVE_TEST, data});
 
-/* movies requests */
+/*  request all*/
+export const requestMoviesAndSeriesList = () => ({type: ACTION.REQUEST_MOVIES_AND_SERIES_LIST});
 
+/* movies requests */
 export const requestMoviesList = () => ({type: ACTION.REQUEST_MOVIES_LIST});
 
-export const receiveMoviesList = data => ({type: ACTION.RECEIVE_MOVIES_LIST, data});
+export const receiveMoviesList = payload => ({type: ACTION.RECEIVE_MOVIES_LIST, payload});
 
-/* export const requestArtistInfo = () => ({ type: REQUEST_ARTISTINFO });
-export const receiveArtistInfo =  data => ({ type: RECEIVE_ARTISTINFO, data });
+/* series requests */
+export const requestSeriesList = () => ({type: ACTION.REQUEST_SERIES_LIST});
 
-
-export const requestDiscography = () => ({ type: REQUEST_DISCOGRAPHY });
-export const receiveDiscography = data => ({ type: RECEIVE_DISCOGRAPHY, data });
-
-export const requestTracklist = () => ({ type: REQUEST_TRACKLIST });
-export const receiveTracklist = data => ({ type: RECEIVE_TRACKLIST, data }); */
+export const receiveSeriesList = payload => ({type: ACTION.RECEIVE_MOVIES_LIST, payload});

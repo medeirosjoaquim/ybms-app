@@ -5,6 +5,9 @@
 export const DO_TEST_REQUEST = "DO_TEST_REQUEST";
 export const DO_RECEIVE_TEST = "DO_RECEIVE_TEST";
 
+
+export const REQUEST_MOVIES_AND_SERIES_LIST = "REQUEST_MOVIES_AND_SERIES_LIST"
+
 /** action types for movies:
  *
  */

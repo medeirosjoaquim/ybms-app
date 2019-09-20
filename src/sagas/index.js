@@ -1,62 +1,26 @@
 import { call, all,  put, takeEvery } from "redux-saga/effects";
-import { DO_TEST_REQUEST, REQUEST_MOVIES_LIST } from "../actions/types";
-import {receiveTestData} from "../actions";
-import axios from 'axios';
+import { REQUEST_MOVIES_AND_SERIES_LIST, DO_TEST_REQUEST} from "../actions/types";
+import * as actions from "../actions";
 
-const testRequest = async () => {
-  try {
-    const response = await axios.get("https://jsonplaceholder.typicode.com/users", {'headers': {'Authorization': 'Teste'}});
-    console.log(response);
-    return response.data;
-  } catch (e) {
-    console.log(e);
-  }
-};
-// theMovieDbAuth
-// Generate a new request token
-const getMoviesList = async () => {
-  try {
-    const response = await axios.get('https://api.themoviedb.org/4/list/121792?page=1', {
-      'headers': {
-        'authorization':'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMjhmNjAzNmUzMWU2YTJhYTVhZjIwYzI2MTE0MTM4MSIsInN1YiI6IjVkODI4MjQwZjY3ODdhMDAxNTllNDg0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kk8r1u6ykCvdKrMHOfwaO7LYnyqxC2axf1S_oGI9wIY',
-        'Content-Type': 'application/json;charset=utf-8'
-      }
-    });
-    console.log('generate request token', response)
-    return response
-  } catch (e) {
-    console.log(e);
-  }
-};
+import * as middleware from './api'
 
-
-/*
-const testRequest = async () => {
-  try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users", {
-      headers: {
-        "Content-Type": "application/json",
-    },
-    }
-    );
-    const data = await response.json();
-    return data;
-  } catch (e) {
-    console.log(e);
-  }
-};
- */
+export function* getMoviesAndSeries() {
+  const movies = yield call(middleware.getMoviesList)
+  const series = yield call(middleware.getSeriesList)
+  yield put(actions.receiveMovies(movies));
+  yield put(actions.receiveSeries(series));
+}
 
 function* getTestData(action) {
     // do api call
-  const teste = yield call(testRequest);
+  const teste = yield call(middleware.testRequest);
   console.log('call', teste);
     yield put ( receiveTestData (teste) )
 }
 
 function* receiveMoviesList(action) {
 // do api call
-const teste = yield call(testRequest);
+const teste = yield call(middleware.testRequest);
 console.log('call', teste);
   yield put ( receiveTestData (teste) )
 }
@@ -65,6 +29,7 @@ console.log('call', teste);
 export default function* rootSaga() {
   yield all([
     takeEvery(DO_TEST_REQUEST, getTestData),
-    takeEvery(REQUEST_MOVIES_LIST, <receiveMoviesList></receiveMoviesList>),
+    takeEvery(REQUEST_MOVIES_AND_SERIES_LIST, getMoviesAndSeries),
+
   ]);
 }

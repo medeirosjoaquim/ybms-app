@@ -30,7 +30,7 @@ class Header extends Component {
               <NavLink to="/favorites">Favorites</NavLink>
             </li>
             <li className="breadcrumb-item">
-              <a href="#">Movies/Series</a>
+            <NavLink to="/favorites">Movies/Series</NavLink>
             </li>
             <li className="breadcrumb-item">
               <NavLink to="/about">About</NavLink>
