@@ -13,7 +13,7 @@
   margin: 0.5rem 2rem;
   min-height: 100vh;
   display: flex;
-    justify-content: center;
+  justify-content: center;
 }
 .App-link {
   color: #61dafb;
@@ -26,5 +26,11 @@
 @include tablet {
   .Title-1 {
     font-size: 2rem;
+  }
+  .App-content {
+    margin: 3rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
   }
 }

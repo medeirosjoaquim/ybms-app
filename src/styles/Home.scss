@@ -14,9 +14,11 @@
 }
 
 @include tablet {
-.home {
-
-
-}
-
+  .home {
+    &-banner--container {
+      margin-bottom: 1.5rem;
+    }
+    &-banner--title {
+    }
+  }
 }
