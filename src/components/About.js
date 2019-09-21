@@ -7,7 +7,13 @@ const About = () => {
         <h3>About us</h3>
       </div>
       <p>
-        To know a person's favorite movies is a thread that We can follow to understand what touches they.
+        To know a person's favorite movies is to find a thread that We can follow to understand what touches they.
+      </p>
+      <p>
+        That's why I've built ybms, so you can find that thread and know a little more about me :) .
+      </p>
+      <p>
+        To be a frontend developer goes beyond code. It's an aestethical journey ...you need as much empaty as technical knowledge...
       </p>
       {/* <div className="about--quotation">
       <blockquote><p class="quotation">
