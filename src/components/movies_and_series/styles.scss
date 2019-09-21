@@ -4,9 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   .movie--card {
-    margin:0.5rem 0;
+    margin:0.5rem;
     .movie--info {
       width: 185px;
       height: 40px;
