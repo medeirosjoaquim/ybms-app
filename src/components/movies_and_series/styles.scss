@@ -1,4 +1,5 @@
 @import '../../styles/media';
+@import '../../styles/colors';
 
 .movie--list {
   display: flex;
@@ -9,8 +10,8 @@
     .movie--info {
       width: 185px;
       height: 40px;
-      background-color: #0b1d21;
-      color: #5a6c70;
+      background-color:$philips-blue;
+      color:$philips-opaque;
       padding: 0 14px;
       box-sizing: border-box;
       z-index: 1;
