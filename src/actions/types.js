@@ -1,3 +1,8 @@
+/**
+ * Check auth
+ */
+export const CHECK_LOGGED = "CHECK_LOGGED";
+
 /** action types test:
  *
  */
