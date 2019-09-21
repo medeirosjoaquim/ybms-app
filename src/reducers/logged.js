@@ -1,8 +1,8 @@
-import { DO_RECEIVE_TEST} from "../actions/types";
+import { CHECK_LOGGED} from "../actions/types";
 
 export default (state = {}, { type, data }) => {
   switch (type) {
-    case DO_RECEIVE_TEST:
+    case CHECK_LOGGED:
       console.log('reducer',  data, type);
       return data;
     default:
