@@ -18,6 +18,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      .movie-average {
+        display: flex;
+        align-items: center;
+      }
+      .movie-rating {
+        margin: 0 0.5rem;
+      }
     }
   }
 
