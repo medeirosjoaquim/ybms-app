@@ -3,6 +3,10 @@
  */
 export const CHECK_LOGGED = "CHECK_LOGGED";
 
+export const REQUEST_SESSION_TOKEN = "REQUEST_SESSION_TOKEN";
+
+export const RECEIVE_SESSION_TOKEN = "RECEIVE_SESSION_TOKEN";
+
 /** action types test:
  *
  */

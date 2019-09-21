@@ -15,7 +15,31 @@ const moviesListUrl = 'https://api.themoviedb.org/4/list/121792?page=1'
 
 const seriesListUrl = 'https://api.themoviedb.org/4/list/121793?page=1'
 
+/**
+ * authentication
+ */
+
+//GET
 const requestTokenUrl = `https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`
+
+const requestToken = ''
+
+const userPermissionURL = `https://www.themoviedb.org/authenticate/${requestToken}`
+
+// POST -> must send requestToken in the body
+const createSessionURL = `https://api.themoviedb.org/3/authentication/session/new?api_key=${apiKey}`
+
+/**
+ * authentication methods
+ */
+export const requestSessionToken = async () => {
+  try {
+    const response = await axios.get(requestTokenUrl, requestHeaders);
+    return response.data
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 /**
  * themoviedb api - get movies list

@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
-import isLogged from './logged'
+import session from './session';
+import logged from './logged';
 import  movies  from "./movies";
 import  series  from "./series";
 
 const rootReducer = combineReducers({
-  isLogged,
+  session,
+  logged,
   movies,
   series
 });
