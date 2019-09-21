@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from './banner'
 import {useSelector} from 'react-redux'
 import {baseurl} from '../config/base-url'
+import MoviesAndSeries from './movies_and_series'
 
 
 
@@ -42,6 +43,7 @@ const Home = () => {
           </div>
           <Banner title={`${serie_poster_description} - ${serie_release_date}`} imgSrc={serie_poster_path} imgAlt={`Banner for the serie ${serie_poster_description}`} />
         </div>
+        <MoviesAndSeries/>
     </div>
       :
       <div>
