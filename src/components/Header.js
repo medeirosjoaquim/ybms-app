@@ -43,7 +43,7 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => ({ testeDataRequest: state.testeDataRequest });
+const mapStateToProps = state => ({ state: state.testeDataRequest });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ requestSessionToken,requestMoviesAndSeriesList }, dispatch);

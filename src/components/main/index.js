@@ -5,14 +5,15 @@ import {useSelector} from 'react-redux'
 import Favorites from '../Favorites';
 import About from '../About';
 import Home from '../Home';
+import Log from '../Log';
 import RedirectLink from '../RedirectLink'
 
 
 const Main = () => {
-  const {isLogged} = useSelector(state => state);
+  const {logged} = useSelector(state => state);
   return (
     <div className="ybms-main">
-      {isLogged ?
+      {logged ?
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/favorites' component={Favorites} />

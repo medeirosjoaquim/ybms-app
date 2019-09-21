@@ -3,6 +3,8 @@
  */
 export const CHECK_LOGGED = "CHECK_LOGGED";
 
+export const LOG_USER_IN = "LOG_USER_IN";
+
 export const REQUEST_SESSION_TOKEN = "REQUEST_SESSION_TOKEN";
 
 export const RECEIVE_SESSION_TOKEN = "RECEIVE_SESSION_TOKEN";
