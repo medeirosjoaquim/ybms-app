@@ -26,10 +26,14 @@
   font-weight: bold;
 }
 
+.Body-primary {
+  color: $philips-blue;
+}
+
+
 @include tablet {
   .Title-1 {
     font-size: 2rem;
-
   }
   .App-content {
     margin: 3rem 2rem 0 2rem;

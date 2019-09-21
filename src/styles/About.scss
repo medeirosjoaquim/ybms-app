@@ -2,9 +2,12 @@
 @import './colors';
 
 .about {
-
+  margin-top: 1rem;
+  width: 100%;
   &--quotation{
+    margin: 0 auto;
     max-width: 30rem;
+
     .quotation{
       font-size: 20px;
       //margin: 0 auto;
@@ -27,7 +30,6 @@
     .quotation::after {
       content: close-quote;
       display: inline;
-      height: 0;
       line-height: 0;
       left: 10px;
       position: relative;
@@ -41,5 +43,20 @@
       font-size: 1.5em;
       font-style: italic;
     }
+  }
+  p {
+    line-height: 1.5rem;
+    margin: 0 0 1rem;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  &--title{
+    margin-top: 2rem;
+  }
+}
+
+@include tablet {
+  .about {
+    max-width: 38rem;
   }
 }

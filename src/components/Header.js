@@ -14,11 +14,15 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="header--brand">
+          <div className="header--img">
           <img src={Logo} alt="Logo for
           the ybms app"/>
-          <h1 className="header--title text-center font-weight-bold">
-            <strong>Your Beloved Music and Series</strong>
+          </div>
+          <div className="header--title">
+            <h1 className="text-center font-weight-bold">
+              <strong>Your Beloved Music and Series</strong>
             </h1>
+          </div>
         </div>
         <div className="header--links">
         <ul className="text-light font-weight-bold">
