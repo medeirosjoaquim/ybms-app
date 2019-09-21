@@ -11,9 +11,10 @@ const {poster} = baseurl;
 const renderMovies = (movie, i) =>
   (<div key={i} id="movie">
     <div className="movie--card">
-    <img src={poster + movie.poster_path} alt={`Poster for the movie ${movie.title}`}></img>
+      <img src={poster + movie.poster_path} alt={`Poster for the movie ${movie.title}`}></img>
+      <div className="movie--info">{movie.vote_average}</div>
     </div>
-    <div>{movie.vote_average}</div>
+
   </div>);
 
 const MoviesList = () => {

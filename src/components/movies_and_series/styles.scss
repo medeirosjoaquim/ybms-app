@@ -1,7 +1,33 @@
+@import '../../styles/media';
+
 .movie--list {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-evenly;
+  .movie--card {
+    margin:0.5rem 0;
+    .movie--info {
+      width: 185px;
+      height: 40px;
+      background-color: #0b1d21;
+      color: #5a6c70;
+      padding: 0 14px;
+      box-sizing: border-box;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
 }
 
+@include tablet {
+  .movie--list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
