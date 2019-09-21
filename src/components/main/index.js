@@ -1,27 +1,18 @@
 import React from 'react';
 import '../../styles/App.scss';
 import { Switch, Route } from 'react-router-dom'
-import {useSelector} from 'react-redux'
 import Favorites from '../Favorites';
 import About from '../About';
 import Home from '../Home';
-import Log from '../Log';
-import RedirectLink from '../RedirectLink'
+import MoviesAndSeries from '../movies_and_series';
 
-
-const Main = () => {
-  const {logged} = useSelector(state => state);
-  return (
-    <div className="ybms-main">
-      {logged ?
-      <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route exact path='/favorites' component={Favorites} />
-        <Route path='/about' component={About}/>
-      </Switch>
-        : <RedirectLink/>}
+const Main = () =>
+ <div className="ybms-main">
+   <Switch>
+    <Route exact path='/' component={Home}/>
+    <Route exact path='/favorites' component={Favorites} />
+    <Route exact path='/movies-and-series' component={MoviesAndSeries} />
+    <Route path='/about' component={About}/>
+  </Switch>
  </div>
-  )
-}
-
 export default Main

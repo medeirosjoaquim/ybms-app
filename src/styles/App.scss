@@ -30,17 +30,6 @@
   color: $philips-blue;
 }
 
-.redirect--screen{
-  font-size: 1rem;
-  max-width: 20rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  p {
-    margin: 0.5rem 0;
-  }
-}
 
 @include tablet {
   .Title-1 {

@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import Logo from '../assets/logo_white.png';
 import { NavLink } from 'react-router-dom'
-import { requestSessionToken, requestMoviesAndSeriesList } from '../actions';
+import { requestMoviesAndSeriesList } from '../actions';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 
 
 class Header extends Component {
   componentDidMount() {
-    this.props.requestSessionToken();
     this.props.requestMoviesAndSeriesList();
   }
   render() {
@@ -43,9 +42,9 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = state => ({ state: state.testeDataRequest });
+const mapStateToProps = state => ({ testeDataRequest: state.testeDataRequest });
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ requestSessionToken,requestMoviesAndSeriesList }, dispatch);
+  bindActionCreators({ requestMoviesAndSeriesList }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

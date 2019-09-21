@@ -5,14 +5,6 @@ export const requestTestData = () => ({type: ACTION.DO_TEST_REQUEST});
 
 export const receiveTestData = data => ({type: ACTION.DO_RECEIVE_TEST, data});
 
-/* auth session */
-
-export const requestSessionToken = () => ({type: ACTION.REQUEST_SESSION_TOKEN});
-
-export const receiveSessionToken = (payload) => ({type: ACTION.RECEIVE_SESSION_TOKEN, payload});
-
-export const logUserIn = (data = true) => ({type: ACTION.LOG_USER_IN, data});
-
 /*  request all*/
 export const requestMoviesAndSeriesList = () => ({type: ACTION.REQUEST_MOVIES_AND_SERIES_LIST});
 

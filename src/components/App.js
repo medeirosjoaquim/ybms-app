@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React from 'react';
 import { Provider } from "react-redux";
 
 import Header from './Header';
@@ -6,20 +6,13 @@ import Main from './main/';
 import Footer from './Footer';
 import store from '../store';
 
-export default class App extends Component {
+import '../styles/App.scss';
 
-  render() {
-    return (
-
+export default () =>
       <Provider store={store}>
-          <Fragment>
-          <Header />
-          <div className="App-content">
-            <Main/>
-          </div>
-            <Footer />
-        </Fragment>
-        </Provider>
-    )
-  }
-}
+        <Header />
+        <div className="App-content">
+          <Main/>
+        </div>
+        <Footer/>
+     </Provider>
