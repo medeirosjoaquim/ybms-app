@@ -5,6 +5,8 @@
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "express": "^4.16.4",
     "express-favicon": "^2.0.1",
     "node-sass": "^4.11.0",
@@ -19,6 +21,7 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "2.1.8",
     "react-tabs": "^3.0.0",
+    "react-test-renderer": "^16.9.0",
     "redux": "^4.0.1",
     "redux-act": "^1.7.4",
     "redux-devtools-extension": "^2.13.8",
@@ -39,5 +42,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "redux-mock-store": "^1.5.3"
+  }
 }
