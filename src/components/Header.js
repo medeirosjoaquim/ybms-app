@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import Logo from '../assets/logo_white.png';
-import { NavLink } from 'react-router-dom'
+import { Router, NavLink } from 'react-router-dom'
 import { requestMoviesAndSeriesList } from '../actions';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
+import { createBrowserHistory } from "history";
 
+const history = createBrowserHistory()
 
-class Header extends Component {
+export class Header extends Component {
   componentDidMount() {
     this.props.requestMoviesAndSeriesList();
   }
@@ -25,17 +27,19 @@ class Header extends Component {
           </div>
         </div>
         <div className="header--links">
-        <ul className="text-light font-weight-bold">
-            <li className="breadcrumb-item">
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li className="breadcrumb-item">
-              <NavLink to="/favorites">Favorites</NavLink>
-            </li>
-            <li className="breadcrumb-item">
-              <NavLink to="/about">About</NavLink>
-            </li>
-        </ul>
+          <Router history={history}>
+            <ul className="text-light font-weight-bold">
+              <li className="breadcrumb-item">
+                <NavLink to="/">Home</NavLink>
+              </li>
+              <li className="breadcrumb-item">
+                <NavLink to="/favorites">Favorites</NavLink>
+              </li>
+              <li className="breadcrumb-item">
+                <NavLink to="/about">About</NavLink>
+              </li>
+            </ul>
+          </Router>
         </div>
       </div>
     )
