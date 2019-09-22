@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.4.3",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "enzyme": "^3.10.0",
@@ -21,7 +22,6 @@
     "react-router-dom": "^5.0.1",
     "react-router-redux": "^4.0.8",
     "react-scripts": "2.1.8",
-    "react-sidebar": "^3.0.2",
     "react-tabs": "^3.0.0",
     "react-test-renderer": "^16.9.0",
     "redux": "^4.0.1",
