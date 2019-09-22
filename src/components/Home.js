@@ -6,7 +6,7 @@ import MoviesAndSeries from './movies_and_series'
 
 
 
-const Home = () => {
+export const Home = () => {
 
   let movie_poster_path = '';
   let movie_poster_description = '';
