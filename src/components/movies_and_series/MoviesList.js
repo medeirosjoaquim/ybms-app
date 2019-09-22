@@ -64,7 +64,7 @@ class MoviesList extends Component {
 }
 function mapStateToProps(state) {
   const { movies } = state
-  return { movieList: movies.results }
+  return { movieList: movies.results.sort(dynamicSort('title')) }
 }
 
 export default connect(mapStateToProps)(MoviesList)
