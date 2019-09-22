@@ -32,17 +32,19 @@ const Home = () => {
     (movies !== undefined & movies.results !== undefined & series !== undefined & series.results !== undefined) ?
     <div className="home">
         <div className="home-banner--container">
-          <div className="home-banner--title Title-1">
-            TOP #1 Movie
+          <div className="home-banner--wrapper">
+            <div className="home-banner--title Title-1">
+              TOP #1 Movie
+            </div>
+            <Banner title={`${movie_poster_description} - ${movie_release_date}`} imgSrc={movie_poster_path} imgAlt={`Banner for the movie ${movie_poster_description}`} />
           </div>
-          <Banner title={`${movie_poster_description} - ${movie_release_date}`} imgSrc={movie_poster_path} imgAlt={`Banner for the movie ${movie_poster_description}`} />
-        </div>
-        <div className="home-banner--container">
-          <div className="home-banner--title Title-1">
-            TOP #1 Serie
+          <div className="home-banner--wrapper">
+            <div className="home-banner--title Title-1">
+              TOP #1 Serie
+            </div>
+            <Banner title={`${serie_poster_description} - ${serie_release_date}`} imgSrc={serie_poster_path} imgAlt={`Banner for the serie ${serie_poster_description}`} />
+            </div>
           </div>
-          <Banner title={`${serie_poster_description} - ${serie_release_date}`} imgSrc={serie_poster_path} imgAlt={`Banner for the serie ${serie_poster_description}`} />
-        </div>
         <MoviesAndSeries/>
     </div>
       :

@@ -2,6 +2,7 @@
 @import '../../styles/colors';
 
 .banner {
+  max-width: 15.60rem;
     cursor: pointer;
     box-shadow: 0.15rem 0.15rem 0.25rem 0.25rem rgba(0,0,0,0.6);
     display: flex;
@@ -27,16 +28,5 @@
 }
 
 @include tablet {
-  .banner {
-    box-shadow: 0.15rem 0.15rem 0.25rem 0.25rem rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-      justify-content: flex-start;
-    &--title {
-        font-size: 2rem;
-        margin: 2rem;
-        font-weight: normal;
-    }
-  }
+
 }

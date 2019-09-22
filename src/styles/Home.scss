@@ -3,12 +3,16 @@
 .home {
   &-banner--container {
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   &-banner--title {
     display:flex;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 0.5rem;
+    margin: 2rem 0;
   }
 
 }
@@ -16,9 +20,11 @@
 @include tablet {
   .home {
     &-banner--container {
+      flex-direction: row;
       margin-bottom: 1.5rem;
     }
-    &-banner--title {
+    &-banner--wrapper {
+margin: 0 2rem;
     }
   }
 }

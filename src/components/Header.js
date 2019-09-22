@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import Logo from '../assets/logo_white.png';
-import { Router, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { requestMoviesAndSeriesList } from '../actions';
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-import { createBrowserHistory } from "history";
-
-const history = createBrowserHistory()
 
 export class Header extends Component {
   componentDidMount() {
@@ -27,7 +24,6 @@ export class Header extends Component {
           </div>
         </div>
         <div className="header--links">
-          <Router history={history}>
             <ul className="text-light font-weight-bold">
               <li className="breadcrumb-item">
                 <NavLink to="/">Home</NavLink>
@@ -39,7 +35,6 @@ export class Header extends Component {
                 <NavLink to="/about">About</NavLink>
               </li>
             </ul>
-          </Router>
         </div>
       </div>
     )

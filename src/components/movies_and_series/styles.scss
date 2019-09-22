@@ -1,13 +1,13 @@
 @import '../../styles/media';
 @import '../../styles/colors';
 
-.movie--list {
+.movieseries--list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  .movie--card {
+  .movieseries--card {
     margin:0.5rem;
-    .movie--info {
+    .movieseries--info {
       width: 185px;
       height: 40px;
       background-color:$philips-blue;
@@ -18,11 +18,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .movie-average {
+      .movieseries-average {
         display: flex;
         align-items: center;
       }
-      .movie-rating {
+      .movieseries-rating {
         margin: 0 0.5rem;
       }
     }
@@ -31,10 +31,19 @@
 }
 
 @include tablet {
-  .movie--list {
+  .movieseries--list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+  }
+  .movies-and-series {
+    margin:0 4rem;
+  }
+}
+
+@include desktop {
+  .movies-and-series {
+    margin:0 8rem;
   }
 }
