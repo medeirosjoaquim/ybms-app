@@ -38,8 +38,12 @@ class MoviesList extends Component {
     this.state = {};
   }
 
-  toggleSortDate = (event) => {
+  toggleSortByDate = (event) => {
     this.setState({movieList: this.props.movieList.sort(dynamicSort('release_date'))})
+  }
+
+  toggleSortByTitle = (event) => {
+    this.setState({movieList: this.props.movieList.sort(dynamicSort('title'))})
   }
 
   render() {
@@ -48,8 +52,8 @@ class MoviesList extends Component {
     return (
       <div className="movies">
       <div className="sort-header">
-        <button type="button" className="btn btn-link" onClick={this.toggleSortDate}>Order by release year</button>
-        <button type="button" className="btn btn-link">Order by movie name </button>
+        <button type="button" className="btn btn-link" onClick={this.toggleSortByDate}>Order by release year</button>
+        <button type="button" className="btn btn-link"onClick={this.toggleSortByTitle}>Order by movie name </button>
       </div>
       <div className="movie--list">
         {this.props.movieList.map(renderMovies)}
