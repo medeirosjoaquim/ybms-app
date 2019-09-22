@@ -4,28 +4,35 @@ import {useSelector} from 'react-redux'
 import {baseurl} from '../config/base-url'
 import MoviesAndSeries from './movies_and_series'
 import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-
-const useStyles = makeStyles(theme => ({
-  paper: {
-    position: 'absolute',
-    width: 400,
-    height: 600,
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
-
-const modalStyle = {
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-}
-
+import Drawer from '@material-ui/core/Drawer';
+import {useWindowSize} from '../utils';
+import DetailsContent from './movies_and_series/details'
 export const Home = () => {
+  const useStyles = makeStyles({
+    list: {
+      width: useWindowSize().width < 500 ? 200 : 400, // set sidebar width according to viewport
+    },
+    fullList: {
+      width: 'auto',
+    },
+  });
   const classes = useStyles();
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (side, open) => event => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState({...state, [side]: open});
+  };
+
+
   let movie_poster_path = '';
   let movie_poster_description = '';
   let movie_release_date = '';
@@ -34,16 +41,26 @@ export const Home = () => {
   let serie_release_date = '';
   const {movies} = useSelector(state => state);
   const {series} = useSelector(state => state);
-  const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+  const sideList = (side, mediaType, title) => {
+    let details = {};
+    if (mediaType === "movie") {
+      details = movies.results.find(data => data.name === title)
+    } else if (mediaType === "tv") {
+      details = movies.results.find(data => data.original_name === title)
+    }
+    return <div
+    className={classes.list}
+    role="presentation"
+    onClick={toggleDrawer(side, false)}
+    onKeyDown={toggleDrawer(side, false)}
+    >
+    mediaType === 'movie' ?
+    <DetailsContent teste={details.name} />
+      :
+    <DetailsContent teste={details.original_name} />
+  </div>
+};
   if (movies !== undefined & movies.results !== undefined) {
     movie_poster_path = baseurl.banner + movies.results[0].poster_path;
     movie_poster_description = movies.results[0].title;
@@ -58,9 +75,7 @@ export const Home = () => {
   return (
     (movies !== undefined & movies.results !== undefined & series !== undefined & series.results !== undefined) ?
       <div className="home">
-         <button type="button" onClick={handleOpen}>
-        Open Modal
-      </button>
+        <button onClick={toggleDrawer('right', true)}>Open Right</button>
         <div className="home-banner--container">
           <div className="home-banner--wrapper">
             <div className="home-banner--title Title-1">
@@ -75,20 +90,9 @@ export const Home = () => {
             <Banner title={`${serie_poster_description} - ${serie_release_date}`} imgSrc={serie_poster_path} imgAlt={`Banner for the serie ${serie_poster_description}`} />
             </div>
         </div>
-        <Modal
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-        open={open}
-        onClose={handleClose}
-      >
-        <div style={modalStyle} className={classes.paper}>
-          <h2 id="simple-modal-title">Text in a modal</h2>
-          <p id="simple-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </p>
-         aaa
-        </div>
-      </Modal>
+        <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
+        {sideList('right')}
+      </Drawer>
         <MoviesAndSeries/>
     </div>
       :
