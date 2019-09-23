@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux';
-import {dynamicSort, addFavoritesMovies, getFavoritesMoviesArray} from '../../utils'
+import {dynamicSort} from '../../utils'
 import Drawer from '@material-ui/core/Drawer';
 import {baseurl} from '../../config/base-url'
 import { FaStar } from 'react-icons/fa';
@@ -11,23 +11,9 @@ import './styles.scss'
 class MoviesList extends Component {
   constructor(props) {
     super(props);
-    this.state = {open: false, movie: {}, favorites: getFavoritesMoviesArray()};
-    addFavoritesMovies('679');
+    this.state = {open: false, movie: {}};
   }
 
-  addStatusToMovie = () => {
-
-    this.isFavorite();
-  }
-  isFavorite = (id) => {
-    let fav = getFavoritesMoviesArray();
-    if (fav.includes(id)) {
-       return true
-    } else {
-      return false;
-    }
-
-  }
   renderMovies = (movie, i) => {
 
     return <div key={i} id="movie" onClick={() => this.setState({movie: movie, open: true})}>
