@@ -65,7 +65,7 @@ export const Home = () => {
           onKeyDown={toggleDrawer(side, false)}
         >
         {state.media === 'movie' ?
-            <DetailsContent title={movie_poster_description} imgSrc={baseurl.posterDetail + movies.results[0].poster_path} year={movie_release_date}/>
+            <DetailsContent title={movie_poster_description} imgSrc={baseurl.posterDetail + movies.results[0].poster_path} year={movie_release_date} id={movies.results[0].id}/>
           :
         <DetailsContent title={serie_poster_description} />
         }

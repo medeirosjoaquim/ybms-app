@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiKey = 'a28f6036e31e6a2aa5af20c261141381'
+export const apiKey = 'a28f6036e31e6a2aa5af20c261141381'
 
 const accessToken = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMjhmNjAzNmUzMWU2YTJhYTVhZjIwYzI2MTE0MTM4MSIsInN1YiI6IjVkODI4MjQwZjY3ODdhMDAxNTllNDg0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kk8r1u6ykCvdKrMHOfwaO7LYnyqxC2axf1S_oGI9wIY'
 
