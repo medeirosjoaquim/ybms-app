@@ -27,9 +27,6 @@ class MoviesList extends Component {
     </div>
   </div>);
 
-
-  handleToggle = () => this.setState({open: !this.state.open});
-
   toggleSortByDate = (event) => {
     this.setState({movieList: this.props.movieList.sort(dynamicSort('release_date'))})
   }
