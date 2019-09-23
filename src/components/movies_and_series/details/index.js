@@ -6,7 +6,7 @@ import {requestMovieDetails} from '../../../actions';
 import {castMap} from './utils';
 import './styles.scss';
 import {apiKey} from '../../../sagas/api';
-
+import {baseurl} from '../../../config/base-url'
 class DetailsContent extends Component {
   cast = {};
   constructor(props) {
