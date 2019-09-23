@@ -6,8 +6,13 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import App from './components/App';
 
-if (localStorage.getItem('@app/favorites') === null) {
-   localStorage.setItem('@app/favorites', 'works');
+if (localStorage.getItem('@app/favorites/movies') === null) {
+   localStorage.setItem('@app/favorites/movies', 'works');
+   console.log('works');
+}
+
+if (localStorage.getItem('@app/favorites/series') === null) {
+   localStorage.setItem('@app/favorites/series', 'works');
    console.log('works');
 }
 

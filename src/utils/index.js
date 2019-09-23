@@ -46,3 +46,38 @@ export function useWindowSize() {
 
   return windowSize;
 }
+const unique = (value, index, self) => {
+  return self.indexOf(value) === index;
+}
+export const addFavoritesMovies = (id) => {
+  let favoriteMovies = localStorage.getItem('@app/favorites/movies');
+  if (favoriteMovies !== null) {
+    favoriteMovies = favoriteMovies.split(',');
+    favoriteMovies.push(id);
+    favoriteMovies = favoriteMovies.filter(unique);
+    localStorage.setItem('@app/favorites/movies', favoriteMovies);
+  } else {
+    localStorage.setItem('@app/favorites/movies', [id]);
+  }
+}
+
+export const getFavoritesMoviesArray = (id) => {
+  return localStorage.getItem('@app/favorites/movies').split(',');
+}
+
+export const addFavoritesSeries = (id) => {
+  let favoriteSeries = localStorage.getItem('@app/favorites/series');
+  if (favoriteSeries !== null) {
+    favoriteSeries = favoriteSeries.split(',');
+    favoriteSeries.push(id);
+    favoriteSeries = favoriteSeries.filter(unique);
+    localStorage.setItem('@app/favorites/series', favoriteSeries);
+  } else {
+    localStorage.setItem('@app/favorites/series', [id]);
+  }
+}
+
+export const getFavoritesSeriesArray = (id) => {
+  return localStorage.getItem('@app/favorites/Series').split(',');
+}
+//var storedNames = JSON.parse(localStorage.getItem("names"));

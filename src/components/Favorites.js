@@ -1,6 +1,5 @@
 import React from 'react';
 const Favorites = () => {
-
     return (
       <div className="favorites">
         <h4>Hang in there! We're still workin</h4>
