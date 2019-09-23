@@ -10,7 +10,7 @@ import DetailsContent from './movies_and_series/details'
 export const Home = () => {
   const useStyles = makeStyles({
     list: {
-      width: useWindowSize().width < 500 ? 290 : 400, // set sidebar width according to viewport
+      width: useWindowSize().width < 500 ? 240 : 500, // set sidebar width according to viewport
     },
     fullList: {
       width: 'auto',
@@ -21,11 +21,9 @@ export const Home = () => {
   let movie_poster_path = '';
   let movie_poster_description = '';
   let movie_release_date = '';
-  let movie_overview = '';
   let serie_poster_path = '';
   let serie_poster_description = '';
-  let serie_release_date = '';
-  let serie_overview = '';
+  //let serie_release_date = '';
 
   const {movies} = useSelector(state => state);
   const {series} = useSelector(state => state);
@@ -54,7 +52,7 @@ export const Home = () => {
   if (series !== undefined & series.results !== undefined) {
     serie_poster_path = baseurl.banner + series.results[0].poster_path;
     serie_poster_description = series.results[0].name;
-    serie_release_date = series.results[0].first_air_date.slice(0,4);
+    //serie_release_date = series.results[0].first_air_date.slice(0,4);
   }
 
   const sideList = (side) => {

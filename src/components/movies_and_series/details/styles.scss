@@ -1,11 +1,74 @@
+@import '../../../styles/media';
+@import '../../../styles/colors';
+
+
 .details{
+  &--details {
+
+  }
   &--container {
+
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 24rem;
   }
-  &--title{
+  &--cast{
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    &-title{
+      color: $philips-blue;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+  }
+  &--title{
+    margin-top: 1.5rem;
+  }
+
+}
+.cast--container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .cast--roles {
+  padding: 1rem 0;
+  align-items: start;
+  justify-content: start;
+  }
+}
+
+@include tablet {
+  .details{
+    &--details {
+    }
+    &--container {
+    }
+    &--cast{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+
+  .cast--container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .cast--roles {
+    align-items: start;
+    justify-content: start;
+    }
   }
 }

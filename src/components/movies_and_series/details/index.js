@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 import {requestMovieDetails} from '../../../actions';
-import {castMap} from './utils';
+import {castMap, runTime} from './utils';
 import './styles.scss';
 import {apiKey} from '../../../sagas/api';
-import {baseurl} from '../../../config/base-url'
+
 class DetailsContent extends Component {
   cast = {};
   constructor(props) {
@@ -27,9 +27,7 @@ class DetailsContent extends Component {
             items: result
           });
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
+
         (error) => {
           this.setState({
             isLoaded: true,
@@ -53,12 +51,12 @@ class DetailsContent extends Component {
             <p className="details--description">
               {this.props.description}
             </p>
-            <ul>
-              {this.cast.map(castMap)};
-            <li></li>
-              <li></li>
-              <li></li>
-            </ul>
+            <div className="details--cast">
+
+              {this.cast.map(castMap)}
+            </div>
+            <div><h5>Total runtime {runTime(this.state.items.runtime)}</h5></div>
+            <div></div>
           </div>
         </div>
       );
