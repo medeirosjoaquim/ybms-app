@@ -86,10 +86,10 @@ export const Home = () => {
             <div className="home-banner--title Title-1">
               TOP #1 Serie
             </div>
-            <div onClick={toggleDrawer('right', true, 'tv')}>
-            <Banner  imgSrc={serie_poster_path} imgAlt={`Banner for the serie ${serie_poster_description}`} />
-            </div>
-            </div>
+           {/*  <div onClick={toggleDrawer('right', true, 'tv')}> */}
+              <Banner  imgSrc={serie_poster_path} imgAlt={`Banner for the serie ${serie_poster_description}`} />
+            {/* </div> */}
+          </div>
         </div>
         <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
         {sideList('right', state.media)}
