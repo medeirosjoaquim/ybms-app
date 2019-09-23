@@ -11,6 +11,7 @@ Your Beloved Movies and Series!
   <a href="#run">Run</a> •
   <a href="#test">Test</a> •
   <a href="#issues">Issues</a> •
+  <a href="#to-do">To do</a> •
   <a href="#about-me">About me</a> •
   <a href="#contact">Contact</a> •
 </p>
@@ -44,6 +45,11 @@ Here We do business with yarn! So, install packages with:
 ## Issues
 
 If there's something wrong you can open an issue in this repo!
+
+## To do
+
+Well, I did this in a hurry. And I've never really had the chance to study ReactJS before. So there's a lot of architectural issues I need to learn.
+Also, I wish I had more time to implement well the tests and write better ones.
 
 ## Contact
 
