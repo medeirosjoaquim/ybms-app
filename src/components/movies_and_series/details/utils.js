@@ -1,7 +1,8 @@
 import React from 'react';
 import humanizeDuration from 'humanize-duration';
 import {baseurl} from '../../../config/base-url'
-import {apiKey} from '../../../sagas/api';
+import { FaStar } from 'react-icons/fa';
+import {FaHeart} from 'react-icons/fa';
 
 const durationTomili = (minutes) => {
   let seconds = minutes * 60;
@@ -24,25 +25,20 @@ export const castMap = (cast, i) => (
   </div>
 )
 
+export const renderMovies = (movie, i) =>
+  (<div key={i} id="movie" onClick={() => console.log(movie.id)}>
+    <div className="movieseries--card">
+      <img src={`${baseurl.poster}${movie.poster_path}`} alt={`Poster for the movie ${movie.title}`}></img>
+      <div className="movieseries--info">
+      <span className="movieseries-average"><FaHeart/></span>
+        <span className="movieseries-average"><FaStar />
+          <span className="movieseries-rating">{movie.vote_average}</span>
+        </span>
+      </div>
+    </div>
+  </div>);
+
+
 export const runTime = (duration) => {
   return humanizeDuration(durationTomili(duration));
-}
-
-export const fetchData = (media) => {
-  fetch(`https://api.themoviedb.org/3/movie/${this.props.id}?api_key=${apiKey}&append_to_response=credits,reviews`)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            items: result
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
 }

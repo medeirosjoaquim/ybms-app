@@ -1,12 +1,13 @@
-import React from 'react'
-import Banner from './banner'
-import {useSelector} from 'react-redux'
-import {baseurl} from '../config/base-url'
-import MoviesAndSeries from './movies_and_series'
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
+import Banner from './banner';
+import {useSelector} from 'react-redux';
+import {baseurl} from '../config/base-url';
+import MoviesAndSeries from './movies_and_series';
+import {makeStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import {useWindowSize} from '../utils';
-import DetailsContent from './movies_and_series/details'
+import DetailsContent from './movies_and_series/details';
+
 export const Home = () => {
   const useStyles = makeStyles({
     list: {

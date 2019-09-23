@@ -1,6 +1,9 @@
 @import '../../styles/media';
 @import '../../styles/colors';
 
+.MuiDrawer-paper {
+  width: 300px;
+}
 .movieseries--list {
   display: flex;
   flex-direction: column;
@@ -31,6 +34,9 @@
 }
 
 @include tablet {
+  .MuiDrawer-paper {
+    width: 500px;
+  }
   .movieseries--list {
     display: flex;
     flex-direction: row;
