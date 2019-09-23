@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import App from './components/App';
 
 if (localStorage.getItem('@app/favorites') === null) {
-   localStorage.setItem('@app/favorites');
+   localStorage.setItem('@app/favorites', 'works');
    console.log('works');
 }
 
