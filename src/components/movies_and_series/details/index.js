@@ -87,7 +87,7 @@ class DetailsContent extends Component {
             <div className="details--poster">
               <img src={this.props.imgSrc} alt="" />
             </div>
-            <div className="details--title Title-1">              {this.props.title}({this.props.year})
+            <div className="details--title Title-2">              {this.props.title}({this.props.year})
           </div>
             <div className="details--details">
               <p className="details--description">

@@ -26,6 +26,10 @@
   font-size: 1.75rem;
   font-weight: bold;
 }
+.Title-2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
 
 .Body-primary {
   color: $philips-blue;
@@ -35,6 +39,9 @@
 @include tablet {
   .Title-1 {
     font-size: 2rem;
+  }
+  .Title-2 {
+    font-size: 1.5rem;
   }
   .App-content {
     margin: 3rem 2rem 0 2rem;
