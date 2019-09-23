@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import './styles.scss'
 
@@ -13,6 +14,9 @@ class DetailsContent extends Component {
         <div className="details--title Title-1">              {this.props.title}({this.props.year})
         </div>
         <div className="details--details">
+          <p className="details--description">
+
+          </p>
           <ul>
             <li>year</li>
             <li></li>
@@ -30,6 +34,12 @@ DetailsContent.propTypes = {
   title: PropTypes.string,
   imgSrc: PropTypes.string,
   year: PropTypes.string,
+  descriptiion: PropTypes.string
 };
 
-export default DetailsContent;
+function mapStateToProps(state) {
+  const {movieDetails} = state
+  return movieDetails;
+}
+
+export default connect(mapStateToProps)(DetailsContent)

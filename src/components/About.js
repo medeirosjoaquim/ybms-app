@@ -28,7 +28,7 @@ const About = () => {
       Now I'm looking for an opportunity to advance in my career in a new place. I used an old MVC of mine as boilerplate to this project and I'm enjoying very much this challenge proposed by Philips <span>:)</span>
       </p>
       <p>
-      I must admit that, because a certain lack of experience, I was worried about the challenge. But then I got the rhythm and now I see that I know more ReactJS than I thought! Hope you enjoy YBMS!
+      I must admit that, because a certain lack of experience, I was worried about the challenge. But then I got the rhythm. And now I worried but with a rhythm!
       </p>
     </div>
   );
