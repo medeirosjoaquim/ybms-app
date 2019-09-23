@@ -1,5 +1,21 @@
 {
   "name": "philips-ybms",
+   "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/path/to/dir/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 2,
+        "functions": 2,
+        "lines": 2,
+        "statements": 2
+      }
+    },
+    "coverageReporters": ["text-summary", "html"]
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -42,6 +42,12 @@ Here We do business with yarn! So, install packages with:
 
 ```yarn test```
 
+### You can get a test report with:
+
+```yarn test -- --coverage```
+
+(note extra -- in the middle)
+
 ## Issues
 
 If there's something wrong you can open an issue in this repo!
