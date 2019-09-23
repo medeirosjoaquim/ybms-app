@@ -9,7 +9,6 @@ export function* getMovies() {
 }
 export function* getMovieDetails(action) {
   const movies = yield call(middleware.getMovieDetails, action.id);
-  console.log(movies);
     yield put(receiveMovieDetails(movies));
 }
 

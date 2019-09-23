@@ -11,24 +11,40 @@ import './styles.scss'
 class MoviesList extends Component {
   constructor(props) {
     super(props);
-    this.state = {open: false, movie: {}};
-    addFavoritesMovies('abc');
-    addFavoritesMovies('abc');
-    console.log(getFavoritesMoviesArray());
+    this.state = {open: false, movie: {}, favorites: getFavoritesMoviesArray()};
+    addFavoritesMovies('679');
   }
 
-  renderMovies = (movie, i) =>
-  (<div key={i} id="movie" onClick={() => this.setState({movie: movie, open: true})}>
-    <div className="movieseries--card">
-      <img src={`${baseurl.poster}${movie.poster_path}`} alt={`Poster for the movie ${movie.title}`}></img>
-      <div className="movieseries--info">
-      <span className="movieseries-average"><FaHeart/></span>
-        <span className="movieseries-average"><FaStar />
-          <span className="movieseries-rating">{movie.vote_average}</span>
-        </span>
+  addStatusToMovie = () => {
+
+    this.isFavorite();
+  }
+  isFavorite = (id) => {
+    let fav = getFavoritesMoviesArray();
+    if (fav.includes(id)) {
+       return true
+    } else {
+      return false;
+    }
+
+  }
+  renderMovies = (movie, i) => {
+
+    return <div key={i} id="movie" onClick={() => this.setState({movie: movie, open: true})}>
+      <div className="movieseries--card">
+        <img src={`${baseurl.poster}${movie.poster_path}`} alt={`Poster for the movie ${movie.title}`}></img>
+        <div className="movieseries--info">
+          <span className="movieseries-average">
+            <span className={"isFavorite "}><FaHeart />
+            </span>
+          </span>
+          <span className="movieseries-average"><FaStar />
+            <span className="movieseries-rating">{movie.vote_average}</span>
+          </span>
+        </div>
       </div>
     </div>
-  </div>);
+  };
 
   toggleSortByDate = (event) => {
     this.setState({movieList: this.props.movieList.sort(dynamicSort('release_date'))})
@@ -39,6 +55,7 @@ class MoviesList extends Component {
   }
 
   render() {
+
     return (
       <div className="movieseries">
       <div className="sort-header">

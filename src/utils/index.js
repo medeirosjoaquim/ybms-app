@@ -61,6 +61,19 @@ export const addFavoritesMovies = (id) => {
   }
 }
 
+export const removeFavoritesMovies = (id) => {
+  let favoriteMovies = localStorage.getItem('@app/favorites/movies');
+  if (favoriteMovies !== null) {
+    favoriteMovies = favoriteMovies.split(',');
+    var index = favoriteMovies.indexOf(id);
+  if (index > -1) {
+    favoriteMovies.splice(index, 1);
+  }
+    favoriteMovies = favoriteMovies.filter(unique);
+    localStorage.setItem('@app/favorites/movies', favoriteMovies);
+  }
+}
+
 export const getFavoritesMoviesArray = (id) => {
   return localStorage.getItem('@app/favorites/movies').split(',');
 }
