@@ -6,6 +6,10 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import App from './components/App';
 
+if (localStorage.getItem('@app/favorites') === null) {
+   localStorage.setItem('@app/favorites');
+   console.log('works');
+}
 
 ReactDOM.render(
    <BrowserRouter>
