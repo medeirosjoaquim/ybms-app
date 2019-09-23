@@ -22,7 +22,7 @@ Your Beloved Movies and Series!
 * Like the title says, this app let you browse through my favorite movies series ;)
 
 * Also, It was made to show a little about my work to the nice people
-of Philips!
+of Philips! And it's (almost all) mobile-first.
 
 ## Why
 
