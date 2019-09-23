@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from './banner'
-import {useSelector, useEffect} from 'react-redux'
+import {useSelector} from 'react-redux'
 import {baseurl} from '../config/base-url'
 import MoviesAndSeries from './movies_and_series'
 import { makeStyles } from '@material-ui/core/styles';

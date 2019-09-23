@@ -1,5 +1,4 @@
 import React from 'react';
-import UnderC from '../assets/underconstruction.jpg'
 const Favorites = () => {
 
     return (
