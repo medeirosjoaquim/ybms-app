@@ -2,19 +2,29 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
-import {requestMovieDetails } from '../../../actions'
-import './styles.scss'
-import {apiKey} from '../../../sagas/api'
+import {requestMovieDetails} from '../../../actions';
+import {castMap} from './utils';
+import './styles.scss';
+import {apiKey} from '../../../sagas/api';
 
 class DetailsContent extends Component {
+  cast = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoaded: false,
+      items: {}
+    }
+  }
   componentDidMount() {
+
     fetch(`https://api.themoviedb.org/3/movie/${this.props.id}?api_key=${apiKey}&append_to_response=credits,reviews`)
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            items: result
           });
         },
         // Note: it's important to handle errors here
@@ -30,27 +40,32 @@ class DetailsContent extends Component {
   }
 
   render() {
-    console.log(this.state);
-    return (
-      <div className="details--container">
-        <div className="details--poster">
-          <img src={this.props.imgSrc} alt=""/>
+    if (this.state.isLoaded) {
+      this.cast = this.state.items.credits.cast;
+      return (
+        <div className="details--container">
+          <div className="details--poster">
+            <img src={this.props.imgSrc} alt="" />
+          </div>
+          <div className="details--title Title-1">              {this.props.title}({this.props.year})
         </div>
-        <div className="details--title Title-1">              {this.props.title}({this.props.year})
+          <div className="details--details">
+            <p className="details--description">
+              {this.props.description}
+            </p>
+            <ul>
+              {this.cast.map(castMap)};
+            <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
         </div>
-        <div className="details--details">
-          <p className="details--description">
+      );
+    } else {
+      return (<div>wait</div>);
+    }
 
-          </p>
-          <ul>
-            <li>year</li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-      </div>
-    );
   }
 }
 

@@ -75,7 +75,6 @@ export const Home = () => {
   return (
     (movies !== undefined & movies.results !== undefined & series !== undefined & series.results !== undefined) ?
       <div className="home">
-        <button onClick={toggleDrawer('right', true,'movie')}>Open Right</button>
         <div className="home-banner--container">
           <div className="home-banner--wrapper">
             <div className="home-banner--title Title-1">
