@@ -23,7 +23,7 @@ export const Home = () => {
   let movie_release_date = '';
   let serie_poster_path = '';
   let serie_poster_description = '';
-  //let serie_release_date = '';
+  let series_release_date = '';
 
   const {movies} = useSelector(state => state);
   const {series} = useSelector(state => state);
@@ -49,7 +49,7 @@ export const Home = () => {
   if (series !== undefined & series.results !== undefined) {
     serie_poster_path = baseurl.banner + series.results[0].poster_path;
     serie_poster_description = series.results[0].name;
-    //serie_release_date = series.results[0].first_air_date.slice(0,4);
+    series_release_date = series.results[0].first_air_date.slice(0,4);
   }
 
   const sideList = (side) => {
@@ -62,7 +62,7 @@ export const Home = () => {
         {state.media === 'movie' ?
             <DetailsContent title={movie_poster_description} imgSrc={baseurl.posterDetail + movies.results[0].poster_path} year={movie_release_date} id={movies.results[0].id} media='movies'/>
           :
-        <DetailsContent title={serie_poster_description} media='tv'/>
+        <DetailsContent title={serie_poster_description}  imgSrc={baseurl.posterDetail + series.results[0].poster_path} year={series_release_date} id={series.results[0].id} media='tv'/>
         }
       </div>
     };

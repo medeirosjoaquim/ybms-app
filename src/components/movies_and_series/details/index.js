@@ -17,8 +17,8 @@ class DetailsContent extends Component {
     }
   }
   componentDidMount() {
-
-    fetch(`https://api.themoviedb.org/3/movie/${this.props.id}?api_key=${apiKey}&append_to_response=credits,reviews`)
+    if (this.props.media === 'movies') {
+      fetch(`https://api.themoviedb.org/3/movie/${this.props.id}?api_key=${apiKey}&append_to_response=credits,reviews`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -35,12 +35,32 @@ class DetailsContent extends Component {
           });
         }
       )
+    } else if (this.props.media === 'tv') {
+      fetch(`https://api.themoviedb.org/3/tv/${this.props.id}?api_key=${apiKey}&append_to_response=credits,reviews`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result
+          });
+        },
+
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+    }
+
   }
 
   render() {
-    if (this.state.isLoaded ) {
+    if (this.state.isLoaded) {
+      this.cast = this.state.items.credits.cast;
       if (this.props.media === 'movies') {
-        this.cast = this.state.items.credits.cast;
         return (
           <div className="details--container">
             <div className="details--poster">
@@ -62,7 +82,26 @@ class DetailsContent extends Component {
           </div>
         );
       } else if (this.props.media === 'tv') {
-        return (<div>series</div>);
+        return (
+          <div className="details--container">
+            <div className="details--poster">
+              <img src={this.props.imgSrc} alt="" />
+            </div>
+            <div className="details--title Title-1">              {this.props.title}({this.props.year})
+          </div>
+            <div className="details--details">
+              <p className="details--description">
+                {this.props.description}
+              </p>
+              <div className="details--cast">
+
+                {this.cast.map(castMap)}
+              </div>
+              <div><h5>Episode average runtime {runTime(this.state.items.episode_run_time.reduce((prev, curr) => prev + curr) / this.state.items.episode_run_time.length)}</h5></div>
+              <div></div>
+            </div>
+          </div>
+          );
       }
 
     } else {
