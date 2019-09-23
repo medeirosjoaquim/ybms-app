@@ -38,30 +38,35 @@ class DetailsContent extends Component {
   }
 
   render() {
-    if (this.state.isLoaded) {
-      this.cast = this.state.items.credits.cast;
-      return (
-        <div className="details--container">
-          <div className="details--poster">
-            <img src={this.props.imgSrc} alt="" />
-          </div>
-          <div className="details--title Title-1">              {this.props.title}({this.props.year})
-        </div>
-          <div className="details--details">
-            <p className="details--description">
-              {this.props.description}
-            </p>
-            <div className="details--cast">
-
-              {this.cast.map(castMap)}
+    if (this.state.isLoaded ) {
+      if (this.props.media === 'movies') {
+        this.cast = this.state.items.credits.cast;
+        return (
+          <div className="details--container">
+            <div className="details--poster">
+              <img src={this.props.imgSrc} alt="" />
             </div>
-            <div><h5>Total runtime {runTime(this.state.items.runtime)}</h5></div>
-            <div></div>
+            <div className="details--title Title-1">              {this.props.title}({this.props.year})
           </div>
-        </div>
-      );
+            <div className="details--details">
+              <p className="details--description">
+                {this.props.description}
+              </p>
+              <div className="details--cast">
+
+                {this.cast.map(castMap)}
+              </div>
+              <div><h5>Total runtime {runTime(this.state.items.runtime)}</h5></div>
+              <div></div>
+            </div>
+          </div>
+        );
+      } else if (this.props.media === 'tv') {
+        return (<div>series</div>);
+      }
+
     } else {
-      return (<div>wait</div>);
+      return (<div className="text-center h5">Loading</div>);
     }
 
   }
@@ -73,7 +78,8 @@ DetailsContent.propTypes = {
   imgSrc: PropTypes.string,
   year: PropTypes.string,
   description: PropTypes.string,
-  id: PropTypes.number
+  id: PropTypes.number,
+  media: PropTypes.string
 };
 
 function mapStateToProps(state) {
