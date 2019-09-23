@@ -7,7 +7,7 @@ function Banner(props) {
       <div className='banner--img'>
         <img src={props.imgSrc} alt={props.imgAlt}></img>
       </div>
-      <div className='banner--title'>{props.title}</div>
+     {/*  <div className='banner--title'>{props.title}</div> */}
     </div>
   )
 }

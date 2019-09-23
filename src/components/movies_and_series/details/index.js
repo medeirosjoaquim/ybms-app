@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './styles.scss'
 
 
 class DetailsContent extends Component {
   render() {
     return (
-      <div>
-          {this.props.teste}
+      <div className="details--container">
+        <div className="details--poster">
+          <img src={this.props.imgSrc} alt=""/>
+        </div>
+        <div className="details--title Title-1">              {this.props.title}({this.props.year})
+        </div>
+        <div className="details--details">
+          <ul>
+            <li>year</li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
       </div>
     );
   }
@@ -14,7 +27,9 @@ class DetailsContent extends Component {
 
 
 DetailsContent.propTypes = {
-  teste: PropTypes.string,
+  title: PropTypes.string,
+  imgSrc: PropTypes.string,
+  year: PropTypes.string,
 };
 
 export default DetailsContent;
