@@ -2,21 +2,10 @@ import React from 'react';
 const Favorites = () => {
     return (
       <div className="favorites">
-        <h4>Hang in there! We're still workin</h4>
-        <h5>by now, let's get a little 90's</h5>
-        <p>
-          I should be sleeping. Im feeling sick, hope it's not pneumonia. But I had to keep going. Like that guy used to say: "It's now or never"
-        </p>
-        <p>Notes: It was a mistake to use redux-saga. It's overengineering. I tried to use my old boiler plate and follow things I learned in the past month. Well,
-          turns out people were doing wrong were I was.
-        </p>
-        <p>If I had more time I would focus on writing tests. Now that the movie-details is almost done it would
-          be quick to do the same for series and later apply
-          the pattern to the lists (movies and series)...
-        </p>
-        <p>
-          The favorites would be a catch. I would really use localStorage (ask me why)...Well, so long and thanks for all the fish.
-        </p>
+        <h4>Hang in there! We're still workin!</h4>
+        <p> Sorry to let you down :( , I owe you a Favorites section!</p>
+        <p>I started it out. To avoid the need of an auth process and user autorization for a session in order to use the favorites endpoint of the themoviedb API, I would use localStorage.</p>
+        <p>I did some helpers (addFavorite, getFavorite etc).. but, by now, it will be better to finish this MVC on time.</p>
     </div>
   );
 }
