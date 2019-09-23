@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
+import {requestMovieDetails } from '../../../actions'
 import './styles.scss'
 
 
 class DetailsContent extends Component {
+  componentDidMount() {
+    this.props.requestMovieDetails('679');
+  }
   render() {
     return (
       <div className="details--container">
@@ -38,8 +43,10 @@ DetailsContent.propTypes = {
 };
 
 function mapStateToProps(state) {
-  const {movieDetails} = state
-  return movieDetails;
+  const {movieDetails} = state;
+  return {movieDetails: movieDetails};
 }
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ requestMovieDetails }, dispatch);
 
-export default connect(mapStateToProps)(DetailsContent)
+export default connect(mapStateToProps, mapDispatchToProps)(DetailsContent)

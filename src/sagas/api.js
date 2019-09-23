@@ -22,20 +22,12 @@ const seriesListUrl = 'https://api.themoviedb.org/4/list/121793?page=1'
  */
 
 export const getMoviesList = async () => {
-  try {
     const response = await axios.get( moviesListUrl, requestHeaders);
     return response
-  } catch (e) {
-    console.log(e);
-  }
 };
 export const getMovieDetails = async (movieId) => {
-  try {
-    const response = await axios.get( `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`, requestHeaders);
-    return response
-  } catch (e) {
-    console.log(e);
-  }
+    const response = await axios.get( `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=credits,reviews`, requestHeaders);
+  return response.data
 };
 
 /**

@@ -58,7 +58,6 @@ export const Home = () => {
   }
 
   const sideList = (side) => {
-    console.log('statemedia', state)
         return <div
           className={classes.list}
           role="presentation"

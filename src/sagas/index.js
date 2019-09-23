@@ -1,15 +1,24 @@
-import { call, all,  put, takeEvery, fork } from "redux-saga/effects";
+import { call, all,  put, takeEvery, take, fork, takeLatest } from "redux-saga/effects";
 import { REQUEST_MOVIES_AND_SERIES_LIST, REQUEST_MOVIE_DETAILS} from "../actions/types";
 import { receiveMoviesList, receiveSeriesList, receiveMovieDetails} from "../actions";
 import * as middleware from './api'
+
+function* safe(effect) {
+  try {
+    return { result: yield effect, error: null }
+  } catch (error) {
+    return { result: null, error }
+  }
+}
 
 export function* getMovies() {
   const movies = yield call(middleware.getMoviesList);
   yield put( receiveMoviesList(movies));
 }
-export function* getMovieDetails(id) {
-  const movies = yield call(middleware.getMovieDetails(id));
-  yield put( receiveMovieDetails(movies));
+export function* getMovieDetails(action) {
+  const movies = yield call(middleware.getMovieDetails, action.id);
+  console.log(movies);
+    yield put(receiveMovieDetails(movies));
 }
 
 export function* getSeries() {
