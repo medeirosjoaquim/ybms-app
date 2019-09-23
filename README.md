@@ -11,7 +11,7 @@ Your Beloved Movies and Series!
   <a href="#run">Run</a> •
   <a href="#test">Test</a> •
   <a href="#issues">Issues</a> •
-  <a href="#about">About me</a> •
+  <a href="#about-me">About me</a> •
   <a href="#contact">Contact</a> •
 </p>
 
