@@ -5,17 +5,17 @@ import Drawer from '@material-ui/core/Drawer';
 import {baseurl} from '../../config/base-url'
 import { FaStar } from 'react-icons/fa';
 import {FaHeart} from 'react-icons/fa';
-
+import DetailsContent from './details/';
 import './styles.scss'
 
 class MoviesList extends Component {
   constructor(props) {
     super(props);
-    this.state = {open: false, id: ''};
+    this.state = {open: false, movie: {}};
   }
 
   renderMovies = (movie, i) =>
-  (<div key={i} id="movie" onClick={() => this.setState({id: movie.id, open: true})}>
+  (<div key={i} id="movie" onClick={() => this.setState({movie: movie, open: true})}>
     <div className="movieseries--card">
       <img src={`${baseurl.poster}${movie.poster_path}`} alt={`Poster for the movie ${movie.title}`}></img>
       <div className="movieseries--info">
@@ -48,9 +48,11 @@ class MoviesList extends Component {
       <div className="movieseries--list">
         {this.props.movieList.map(this.renderMovies)}
         </div>
-        <Drawer anchor="right" open={this.state.open} width={'300'} className="aaaa" >
-          <div  onClick={() => this.setState({open: false})}
-          onKeyDown={() => this.setState({open: false})}>aaaaaa</div>
+        <Drawer anchor="right" open={this.state.open} onClick={() => this.setState({open: false})}
+          onKeyDown={() => this.setState({open: false})}>
+          <DetailsContent title={this.state.movie.title} imgSrc={`${baseurl.poster}${this.state.movie.poster_path}`} year={this.state.movie.release_date} id={this.state.movie.id} media='movies'
+          onClick={() => this.setState({open: false})}
+          onKeyDown={() => this.setState({open: false})}/>
         </Drawer>
     </div>
     )
