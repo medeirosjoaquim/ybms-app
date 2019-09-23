@@ -9,6 +9,7 @@ Your Beloved Movies and Series!
   <a href="#why">Why</a> •
   <a href="#install">Install</a> •
   <a href="#run">Run</a> •
+  <a href="#access">Access</a> •
   <a href="#test">Test</a> •
   <a href="#issues">Issues</a> •
   <a href="#to-do">To do</a> •
@@ -38,6 +39,11 @@ Here We do business with yarn! So, install packages with:
 
 ```yarn start```
 
+## Access
+
+I made an online version on heroku https://ybms-philips.herokuapp.com/
+(Sometimes the dyno is down cause it's a freeplan!)
+
 ## Test
 
 ```yarn test```
@@ -56,6 +62,9 @@ If there's something wrong you can open an issue in this repo!
 
 Well, I did this in a hurry. And I've never really had the chance to study ReactJS before. So there's a lot of architectural issues I need to learn.
 Also, I wish I had more time to implement well the tests and write better ones.
+
+Also, It would be great to take snapshots from all components and insert
+it in the heroku pipeline.
 
 ## Contact
 
