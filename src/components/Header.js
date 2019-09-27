@@ -28,9 +28,9 @@ export class Header extends Component {
               <li className="breadcrumb-item">
                 <NavLink to="/">Home</NavLink>
               </li>
-              <li className="breadcrumb-item">
+              {/* <li className="breadcrumb-item">
                 <NavLink to="/favorites">Favorites</NavLink>
-              </li>
+              </li> */}
               <li className="breadcrumb-item">
                 <NavLink to="/about">About</NavLink>
               </li>

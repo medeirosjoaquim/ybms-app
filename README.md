@@ -21,9 +21,6 @@ Your Beloved Movies and Series!
 
 * Like the title says, this app let you browse through my favorite movies series ;)
 
-* Also, It was made to show a little about my work to the nice people
-of Philips! And it's (almost all) mobile-first.
-
 ## Why
 
 * Because It's a way to know a little more about what I like (by knowing what movies and series I like) and to
@@ -41,7 +38,7 @@ Here We do business with yarn! So, install packages with:
 
 ## Access
 
-I made an online version on heroku https://ybms-philips.herokuapp.com/
+I made an online version on heroku https://ybms-app.herokuapp.com/
 (Sometimes the dyno is down cause it's a freeplan!)
 
 ## Test

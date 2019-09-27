@@ -22,13 +22,10 @@ const About = () => {
       I'm a <strong>junior frontend developer</strong>. I first started developing for the frontend in middle 2018, using Angular to build a modern interface for a legacy system written in Delphi (which I also helped develop for some time).
       </p>
       <p>
-      In 2019 I got an offer to come to Blumenau work as a frontend developer using ReactJS and (again) Angular. But, unfortunately, I almost didn't touch ReactJS code and was given almost only Angular tasks to solve. So I still don't have much experience with ReacJS.
+      In 2019 I begin workin with ReactJS and still, step by step, learning and understanding this lib! So far so good.
       </p>
       <p>
-      Now I'm looking for an opportunity to advance in my career in a new place. I used an old MVC of mine as boilerplate to this project and I'm enjoying very much this challenge proposed by Philips <span>:)</span>
-      </p>
-      <p>
-      I must admit that, because a certain lack of experience, I was worried about the challenge. But then I got the rhythm. And now I worried but with a rhythm!
+      I used an old project of mine as boilerplate to build this, so there's a lot of architectural things to refactor now that I understand better the flux pattern! <span>:)</span>
       </p>
     </div>
   );

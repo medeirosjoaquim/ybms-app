@@ -1,5 +1,5 @@
 {
-  "name": "philips-ybms",
+  "name": "ybms-app",
    "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
