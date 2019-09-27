@@ -5,7 +5,7 @@ const year = new Date().getFullYear();
 const Footer = () => (
   <section>
     <footer className="footer">
-        By <a href="https://linkedin.com/in/joaquim-medeiros" target="_blank" rel="noopener noreferrer">Joaquim</a>with <span role="img" aria-label="love">❤️</span>{ year }
+        By <a href="https://linkedin.com/in/joaquim-medeiros" target="_blank" rel="noopener noreferrer">Joaquim</a>with<span role="img" aria-label="love">❤️</span>{ year }
     </footer>
   </section>
 );
