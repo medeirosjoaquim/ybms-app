@@ -21,5 +21,6 @@ chrome-user-data
 .vscode
 *.swp
 *.swo
+/build/
 build/static/css/*.map
 build/static/js/*.map
