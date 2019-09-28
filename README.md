@@ -1,5 +1,7 @@
 # YBM & S
 
+[![Build Status](https://travis-ci.com/medeirosjoaquim/ybms-app.svg?token=Nfdt9KzNxomwmeF6q4cR&branch=master)](https://travis-ci.com/medeirosjoaquim/ybms-app)
+
 <h1 align="center">
 Your Beloved Movies and Series!
 </h1>
